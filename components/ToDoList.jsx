@@ -5,13 +5,13 @@ function ToDoList({ todolist }) {
 
   return (
     <div>
-    todolist && (
-      {
-        todolist.map(t => (
-          <ToDoView todo={t} />
-        ))
-      }
-    )
+      todolist && (
+        {
+          todolist.map(t => (
+            <ToDoView todo={t} />
+          ))
+        }
+      )
     </div>
   )
 }
