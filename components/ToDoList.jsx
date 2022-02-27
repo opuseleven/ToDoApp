@@ -8,7 +8,9 @@ function ToDoList({ todolist }) {
       todolist && (
         {
           todolist.map(t => (
-            <ToDoView todo={t} />
+            <div key={t.id}>
+              <ToDoView todo={t} />
+            </div>
           ))
         }
       )
