@@ -1,6 +1,9 @@
-function ToDoView() {
+function ToDoView({ todo }) {
+
   return (
-    <div>
+    <div key={todo.id}>
+      <h4>{todo.name}</h4>
+      <p>{todo.completed}</p>
     </div>
   )
 }
