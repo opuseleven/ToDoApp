@@ -1,10 +1,17 @@
 import styles from '../styles/Components.module.css';
 import { ToDoView } from '../components';
 
-function ToDoList() {
+function ToDoList({ todolist }) {
+
   return (
     <div>
-      <ToDoView />
+    todolist && (
+      {
+        todolist.map(t => (
+          <ToDoView todo={t} />
+        ))
+      }
+    )
     </div>
   )
 }
