@@ -1,10 +1,16 @@
 import styles from '../styles/Components.module.css';
 import { ToDoView } from '../components';
 
-function CompletedList() {
+function CompletedList({ completedlist }) {
   return (
     <div>
-      <ToDoView />
+      completedlist && (
+        {
+          completedlist.map(t => (
+            <ToDoView todo={t} />
+          ))
+        }
+      )
     </div>
   )
 }
