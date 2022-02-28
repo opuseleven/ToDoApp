@@ -1,11 +1,15 @@
 import styles from '../styles/Components.module.css';
 import { ToDoList, CompletedList } from '../components';
+import { getSortedLists } from '../services';
 
-function ToDoListContainer() {
+function ToDoListContainer({ list }) {
+
+  const sortedLists = getSortedLists(list);
+
   return (
     <div>
-      <ToDoList />
-      <CompletedList />
+      <ToDoList todolist={sortedLists.todoArr} />
+      <CompletedList completedlist={sortedLists.completedArr} />
     </div>
   )
 }
