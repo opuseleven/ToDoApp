@@ -1,8 +1,20 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { useState } from 'react';
+import { ToDoListContainer } from '../components';
 
 const Home: NextPage = () => {
+
+  const defaultItem = {
+    id: 1,
+    name: '',
+    completed: false
+  }
+  const defaultList = [defaultItem];
+
+  const [arr, setArr] = useState(defaultList);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,6 +27,8 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           ToDoApp
         </h1>
+
+        <ToDoListContainer list={arr} />
 
       </main>
 
