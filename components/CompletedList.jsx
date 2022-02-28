@@ -4,15 +4,13 @@ import { ToDoView } from '../components';
 function CompletedList({ completedlist }) {
   return (
     <div>
-      completedlist && (
-        {
-          completedlist.map(t => (
-            <div key={t.id}>
-              <ToDoView todo={t} />
-            </div>
-          ))
-        }
-      )
+      {
+        completedlist.map(t => (
+          <div key={t.id}>
+            <ToDoView todo={t} />
+          </div>
+        ))
+      }
     </div>
   )
 }
