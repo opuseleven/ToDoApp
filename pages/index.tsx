@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { useState } from 'react';
 import { ToDoListContainer } from '../components';
+import { ToDo } from '../types';
 
 const Home: NextPage = () => {
 
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
   }
   const defaultList = [defaultItem];
 
-  const [arr, setArr] = useState(defaultList);
+  const [arr, setArr] = useState<ToDo[]>(defaultList);
 
   return (
     <div className={styles.container}>
