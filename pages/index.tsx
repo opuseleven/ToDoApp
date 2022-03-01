@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { useState } from 'react';
-import { ToDoListContainer } from '../components';
+import { ToDoListContainer, AddToDoButton } from '../components';
 import { ToDo } from '../types';
 
 const Home: NextPage = () => {
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           ToDoApp
         </h1>
-
+        <AddToDoButton arr={arr} setArr={setArr} />
         <ToDoListContainer list={arr} />
 
       </main>
