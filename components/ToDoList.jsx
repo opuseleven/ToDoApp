@@ -7,7 +7,7 @@ function ToDoList({ todolist }) {
     <div>
       {
         todolist.map(t => (
-          <div key={t.id}>
+          <div key={t.id} className={styles.todolist}>
             <ToDoView todo={t} />
           </div>
         ))

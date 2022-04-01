@@ -1,0 +1,27 @@
+.newtodobuttoncontainer {
+
+}
+.newtodobutton {
+
+}
+.todoviewcontainer {
+  display: flex;
+  flex-direction: row;
+}
+.todoinputcontainer {
+  padding: 16px;
+}
+.todoinput {
+  font-size: 24px;
+  border-style: hidden;
+}
+.completedbuttoncontainer {
+  padding: 16px;
+}
+.checkbox {
+  width: 24px;
+  height: 24px;
+}
+.todolist {
+  padding-bottom: 16px;
+}

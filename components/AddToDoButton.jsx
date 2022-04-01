@@ -1,4 +1,5 @@
 import { addNewToDo, getToDo } from '../services';
+import styles from '../styles/Components.module.css';
 
 function AddToDoButton({ arr, setArr }) {
 
@@ -9,8 +10,8 @@ function AddToDoButton({ arr, setArr }) {
   }
 
   return (
-    <div>
-      <button onClick={handleClick}>+</button>
+    <div className={styles.newtodobuttoncontainer}>
+      <button onClick={handleClick} className={styles.newtodobutton}>+</button>
     </div>
   )
 }

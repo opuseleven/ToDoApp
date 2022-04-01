@@ -1,5 +1,5 @@
 import { updateCompleted } from '../services';
-
+import styles from '../styles/Components.module.css';
 import { useState, useEffect } from 'react';
 
 function CompletedButton({ todo }) {
@@ -12,7 +12,7 @@ function CompletedButton({ todo }) {
 
   return (
     <div>
-      <input type="checkbox" id="completedbutton" checked={checked} onChange={() => setChecked(!checked)} />
+      <input type="checkbox" id="completedbutton" checked={checked} onChange={() => setChecked(!checked)} className={styles.checkbox} />
     </div>
   )
 }
