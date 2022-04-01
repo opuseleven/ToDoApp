@@ -1,20 +1,19 @@
 import { ToDoList } from '../components';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 describe('ToDoList component', () => {
 
-  const testtodo1 = {
+  let testtodo1 = {
     id: 1,
     name: 'test todo 1',
     completed: false
   }
-  const testtodo2 = {
+  let testtodo2 = {
     id: 2,
     name: 'test todo 2',
     completed: false
   }
-  const testtodo3 = {
+  let testtodo3 = {
     id: 3,
     name: 'test todo 3',
     completed: false
@@ -24,14 +23,14 @@ describe('ToDoList component', () => {
 
   it('Component renders', () => {
     render(<ToDoList todolist={todolist} />);
-    const headings = screen.getAllByRole('heading');
+    const headings = screen.getAllByRole('textbox');
     expect(headings[0]).toBeDefined();
   })
   it('Passes data to ToDoView component', () => {
     render(<ToDoList todolist={todolist} />);
-    const headings = screen.getAllByRole('heading');
-    expect(headings[0]).toHaveTextContent('test todo 1');
-    expect(headings[1]).toHaveTextContent('test todo 2');
-    expect(headings[2]).toHaveTextContent('test todo 3');
+    const headings = screen.getAllByRole('textbox');
+    expect(headings[0].value).toBe('test todo 1');
+    expect(headings[1].value).toBe('test todo 2');
+    expect(headings[2].value).toBe('test todo 3');
   })
 })
