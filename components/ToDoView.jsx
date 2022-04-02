@@ -1,4 +1,4 @@
-import { CompletedButton } from '../components';
+import { CompletedButton, DeleteButton } from '../components';
 import { useState, useEffect } from 'react';
 import { updateToDo } from '../services';
 import styles from '../styles/Components.module.css';
@@ -18,6 +18,9 @@ function ToDoView({ todo }) {
       </div>
       <div className={styles.todoinputcontainer}>
         <input type="text" value={name} onChange={() => setName(event.target.value)} className={styles.todoinput} />
+      </div>
+      <div>
+        <DeleteButton todo={todo} />
       </div>
     </div>
   )
