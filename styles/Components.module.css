@@ -7,6 +7,7 @@
 .todoviewcontainer {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .todoinputcontainer {
   padding: 16px;
@@ -21,6 +22,12 @@
 .checkbox {
   width: 24px;
   height: 24px;
+}
+.deletebutton {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  font-size: 12px;
 }
 .todolist {
   padding-bottom: 16px;
