@@ -9,13 +9,13 @@ function ToDoList({ todolist, list }) {
 
   useEffect(() => {
     setDisplayedList(todolist);
-  }, [list])
+  }, [todolist])
 
   return (
     <div>
       {
         todolist.map(t => (
-          <div key={t.id} className={styles.todolist}>
+          <div key={t.id.toString()} className={styles.todolist}>
             <ToDoView todo={t} list={list} />
           </div>
         ))
