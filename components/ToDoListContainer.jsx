@@ -13,8 +13,8 @@ function ToDoListContainer({ list }) {
 
   return (
     <div>
-      <ToDoList todolist={sortedLists.todoArr} />
-      <ToDoList todolist={sortedLists.completedArr} />
+      <ToDoList todolist={sortedLists.todoArr} list={list} />
+      <ToDoList todolist={sortedLists.completedArr} list={list} />
     </div>
   )
 }
