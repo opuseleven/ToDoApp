@@ -9,7 +9,7 @@ describe('removeToDo service', () => {
   const td5 = getToDo(5, 'test5', false);
 
   let arr = [td1, td2, td3, td4, td5];
-  function setArr(newArr) {
+  function setArr(newArr: any) {
     arr = newArr;
   }
 
