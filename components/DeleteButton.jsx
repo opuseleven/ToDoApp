@@ -4,7 +4,7 @@ import { removeToDo } from '../services';
 function DeleteButton({ todo, arr, setArr }) {
 
   function handleClick() {
-    removeToDo(todo.id, arr, setArr);
+    removeToDo(todo, arr, setArr);
   }
 
   return (
