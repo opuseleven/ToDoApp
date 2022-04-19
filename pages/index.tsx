@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           ToDoApp
         </h1>
         <AddToDoButton arr={arr} setArr={setArr} />
-        <ToDoListContainer list={arr} />
+        <ToDoListContainer arr={arr} setArr={setArr} />
 
       </main>
 
