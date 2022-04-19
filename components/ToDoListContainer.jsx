@@ -11,10 +11,14 @@ function ToDoListContainer({ arr, setArr }) {
     setSortedLists(getSortedLists(arr));
   }, [arr])
 
+  function sort() {
+    setSortedLists(getSortedLists(arr));
+  }
+
   return (
     <div>
-      <ToDoList todolist={sortedLists.todoArr} arr={arr} setArr={setArr} />
-      <ToDoList todolist={sortedLists.completedArr} arr={arr} setArr={setArr} />
+      <ToDoList todolist={sortedLists.todoArr} arr={arr} setArr={setArr} sort={sort} />
+      <ToDoList todolist={sortedLists.completedArr} arr={arr} setArr={setArr} sort={sort} />
     </div>
   )
 }
