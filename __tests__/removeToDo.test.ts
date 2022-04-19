@@ -9,15 +9,18 @@ describe('removeToDo service', () => {
   const td5 = getToDo(5, 'test5', false);
 
   let arr = [td1, td2, td3, td4, td5];
+  function setArr(newArr) {
+    arr = newArr;
+  }
 
   it('Removes a ToDo object from the end of the arr', () => {
-    removeToDo(5, arr);
+    removeToDo(5, arr, setArr);
     expect(arr.length).toBe(4);
     expect(arr).toEqual([td1, td2, td3, td4]);
   })
 
   it('Removes ToDo object from the middle of array', () => {
-    removeToDo(2, arr);
+    removeToDo(2, arr, setArr);
     expect(arr.length).toBe(3);
     expect(arr).toEqual([td1, td3, td4]);
   })
