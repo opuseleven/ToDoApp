@@ -14,7 +14,7 @@ function ToDoList({ todolist, arr, setArr }) {
   return (
     <div>
       {
-        todolist.map(t => (
+        displayedList.map(t => (
           <div key={t.id.toString()} className={styles.todolist}>
             <ToDoView todo={t} arr={arr} setArr={setArr} />
           </div>
