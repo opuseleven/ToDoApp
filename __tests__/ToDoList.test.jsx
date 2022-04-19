@@ -1,5 +1,6 @@
 import { ToDoList } from '../components';
 import { render, screen } from '@testing-library/react';
+import { getSortedLists } from '../services';
 
 describe('ToDoList component', () => {
 
@@ -21,13 +22,22 @@ describe('ToDoList component', () => {
 
   const todolist = [testtodo1, testtodo2, testtodo3];
 
+  let sortedLists = getSortedLists(todolist);
+  function setSortedLists(newArr) {
+    sortedLists = getSortedLists(newArr);
+  }
+
+  function sort() {
+    setSortedLists(getSortedLists(todolist));
+  }
+
   it('Component renders', () => {
-    render(<ToDoList todolist={todolist} />);
+    render(<ToDoList todolist={todolist} sort={sort} />);
     const headings = screen.getAllByRole('textbox');
     expect(headings[0]).toBeDefined();
   })
   it('Passes data to ToDoView component', () => {
-    render(<ToDoList todolist={todolist} />);
+    render(<ToDoList todolist={todolist} sort={sort} />);
     const headings = screen.getAllByRole('textbox');
     expect(headings[0].value).toBe('test todo 1');
     expect(headings[1].value).toBe('test todo 2');
