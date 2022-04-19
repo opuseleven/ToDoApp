@@ -1,10 +1,10 @@
 import styles from '../styles/Components.module.css';
 import { removeToDo } from '../services';
 
-function DeleteButton({ todo, list }) {
+function DeleteButton({ todo, arr, setArr }) {
 
   function handleClick() {
-    removeToDo(todo.id, list);
+    removeToDo(todo.id, arr, setArr);
   }
 
   return (
