@@ -8,7 +8,7 @@ function ToDoListContainer({ arr, setArr }) {
   const [sortedLists, setSortedLists] = useState(getSortedLists(arr));
 
   useEffect(() => {
-    setSortedLists(getSortedLists(arr));
+    sort();
   }, [arr])
 
   function sort() {
