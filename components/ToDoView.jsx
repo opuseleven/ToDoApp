@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { updateToDo } from '../services';
 import styles from '../styles/Components.module.css';
 
-function ToDoView({ todo, arr, setArr }) {
+function ToDoView({ todo, arr, setArr, sort }) {
 
   const [name, setName] = useState(todo.name);
 
@@ -14,7 +14,7 @@ function ToDoView({ todo, arr, setArr }) {
   return (
     <div key={todo.id} className={styles.todoviewcontainer}>
       <div className={styles.completedbuttoncontainer}>
-        <CompletedButton todo={todo} />
+        <CompletedButton todo={todo} sort={sort} />
       </div>
       <div className={styles.todoinputcontainer}>
         <input type="text" value={name} onChange={() => setName(event.target.value)} className={styles.todoinput} />
