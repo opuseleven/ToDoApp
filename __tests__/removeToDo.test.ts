@@ -14,13 +14,13 @@ describe('removeToDo service', () => {
   }
 
   it('Removes a ToDo object from the end of the arr', () => {
-    removeToDo(5, arr, setArr);
+    removeToDo(td5, arr, setArr);
     expect(arr.length).toBe(4);
     expect(arr).toEqual([td1, td2, td3, td4]);
   })
 
   it('Removes ToDo object from the middle of array', () => {
-    removeToDo(2, arr, setArr);
+    removeToDo(td2, arr, setArr);
     expect(arr.length).toBe(3);
     expect(arr).toEqual([td1, td3, td4]);
   })
