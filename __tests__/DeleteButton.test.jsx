@@ -9,6 +9,9 @@ describe('DeleteButton Component', () => {
   const td2 = getToDo(2, 'test2', false);
 
   let arr = [td1, td2];
+  function setArr(newArr) {
+    arr = newArr;
+  }
 
   it('Component renders', () => {
     render(<DeleteButton />);
@@ -17,7 +20,7 @@ describe('DeleteButton Component', () => {
   })
 
   it('onClick runs removeToDo service', () => {
-    render(<DeleteButton todo={td2} list={arr} />)
+    render(<DeleteButton todo={td2} arr={arr} setArr={setArr} />)
     const button = screen.getByRole('button');
     fireEvent.click(button);
     expect(arr).toEqual([td1]);
