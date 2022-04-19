@@ -30,15 +30,18 @@ describe('ToDoListContainer component', () => {
   }
 
   let arr = [testtodo1, testtodo2, testtodo3, testtodo4, testtodo5];
+  function setArr(newArr) {
+    arr = newArr;
+  }
 
   it('Component renders', () => {
-    render(<ToDoListContainer list={arr} />);
+    render(<ToDoListContainer arr={arr} setArr={setArr} />);
     const headings = screen.getAllByRole('textbox');
     expect(headings[0]).toBeDefined();
   })
 
   it('Sorts lists and passes data', () => {
-    render(<ToDoListContainer list={arr} />);
+    render(<ToDoListContainer arr={arr} setArr={setArr} />);
     const headings = screen.getAllByRole('textbox');
     expect(headings[0].value).toBe('do something');
     expect(headings[1].value).toBe('do something else');
@@ -48,7 +51,7 @@ describe('ToDoListContainer component', () => {
   })
 
   it('Updates data', () => {
-    render(<ToDoListContainer list={arr} />);
+    render(<ToDoListContainer arr={arr} setArr={setArr} />);
     const headings = screen.getAllByRole('textbox');
     const checkboxes = screen.getAllByRole('checkbox');
     fireEvent.click(checkboxes[0]);
