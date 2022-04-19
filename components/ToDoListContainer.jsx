@@ -3,18 +3,19 @@ import { ToDoList, CompletedList } from '../components';
 import { getSortedLists } from '../services';
 import { useState, useEffect } from 'react';
 
-function ToDoListContainer({ list }) {
+function ToDoListContainer({ arr, setArr }) {
 
-  const [sortedLists, setSortedLists] = useState(getSortedLists(list));
+  const [sortedLists, setSortedLists] = useState(getSortedLists(arr));
 
   useEffect(() => {
-    setSortedLists(getSortedLists(list));
-  }, [list])
+    const newLists = getSortedLists(arr);
+    setSortedLists(newLists);
+  }, [arr])
 
   return (
     <div>
-      <ToDoList todolist={sortedLists.todoArr} list={list} />
-      <ToDoList todolist={sortedLists.completedArr} list={list} />
+      <ToDoList todolist={sortedLists.todoArr} arr={arr} setArr={setArr} />
+      <ToDoList todolist={sortedLists.completedArr} arr={arr} setArr={setArr} />
     </div>
   )
 }

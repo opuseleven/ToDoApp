@@ -3,7 +3,7 @@ import { ToDoView } from '../components';
 import { useState, useEffect } from 'react';
 
 
-function ToDoList({ todolist, list }) {
+function ToDoList({ todolist, arr, setArr }) {
 
   const [displayedList, setDisplayedList] = useState(todolist);
 
@@ -16,7 +16,7 @@ function ToDoList({ todolist, list }) {
       {
         todolist.map(t => (
           <div key={t.id.toString()} className={styles.todolist}>
-            <ToDoView todo={t} list={list} />
+            <ToDoView todo={t} arr={arr} setArr={setArr} />
           </div>
         ))
       }
