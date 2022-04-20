@@ -1,5 +1,5 @@
 import { DeleteButton } from '../components';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { getToDo } from '../services';
 
@@ -22,7 +22,9 @@ describe('DeleteButton Component', () => {
   it('onClick runs removeToDo service', () => {
     render(<DeleteButton todo={td2} arr={arr} setArr={setArr} />)
     const button = screen.getByRole('button');
-    fireEvent.click(button);
+    act(() => {
+      fireEvent.click(button);
+    })
     expect(arr).toEqual([td1]);
   })
 })

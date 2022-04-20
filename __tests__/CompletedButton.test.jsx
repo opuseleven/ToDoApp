@@ -1,5 +1,5 @@
 import { CompletedButton } from '../components';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, act } from '@testing-library/react';
 
 describe('CompletedButton component', () => {
 
@@ -25,7 +25,9 @@ describe('CompletedButton component', () => {
 
   it('Updates completes prop onChange', () => {
     render(<CompletedButton todo={testToDo} sort={sort} />);
-    fireEvent.click(screen.getByRole('checkbox'));
+    act(() => {
+      fireEvent.click(screen.getByRole('checkbox'));
+    })
     expect(testToDo.completed).toBe(true);
   })
 })

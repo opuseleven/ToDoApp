@@ -1,5 +1,5 @@
 import { ToDoView } from '../components';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, act } from '@testing-library/react';
 import { getToDo } from '../services';
 
 describe('ToDoView component', () => {
@@ -27,14 +27,18 @@ describe('ToDoView component', () => {
   it('Updates values onChange', () => {
     render(<ToDoView todo={testToDo} sort={sort} />);
     let textbox = screen.getByRole('textbox');
-    fireEvent.change(textbox, {target: {value: 'test change'}});
+    act(() => {
+      fireEvent.change(textbox, {target: {value: 'test change'}});
+    })
     expect(testToDo.name).toBe('test change');
   })
 
   it('Completed button updates todo.completed', () => {
     render(<ToDoView todo={testToDo} sort={sort} />);
     let checkbox = screen.getByRole('checkbox');
-    fireEvent.click(checkbox);
+    act(() => {
+      fireEvent.click(checkbox);
+    })
     expect(testToDo.completed).toBe(true);
   })
 })

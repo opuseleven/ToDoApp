@@ -1,5 +1,5 @@
 import { ToDoListContainer } from '../components';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, act } from '@testing-library/react';
 
 describe('ToDoListContainer component', () => {
 
@@ -54,7 +54,9 @@ describe('ToDoListContainer component', () => {
     render(<ToDoListContainer arr={arr} setArr={setArr} />);
     const headings = screen.getAllByRole('textbox');
     const checkboxes = screen.getAllByRole('checkbox');
-    fireEvent.click(checkboxes[0]);
+    act(() => {
+      fireEvent.click(checkboxes[0]);
+    })
     expect(testtodo1.completed).toBe(true);
     expect(headings[0].value).toBe('do something');
     expect(checkboxes[0].checked).toBe(true);
