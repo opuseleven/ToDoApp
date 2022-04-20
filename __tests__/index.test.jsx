@@ -1,5 +1,5 @@
 import Home from '../pages';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 
 describe('Home page', () => {
 
@@ -12,18 +12,24 @@ describe('Home page', () => {
   it('Textbox updates', () => {
     render(<Home />);
     const headings = screen.getAllByRole('textbox');
-    fireEvent.change(headings[0], {target: {value: 'one'}});
+    act(() => {
+      fireEvent.change(headings[0], {target: {value: 'one'}});
+    })
     expect(headings[0].value).toBe('one');
   })
 
   it('UI allows adding of list item', () => {
     render(<Home />);
     let headings = screen.getAllByRole('textbox');
-    fireEvent.change(headings[0], {target: {value: 'one'}});
     const buttons = screen.getAllByRole('button');
-    fireEvent.click(buttons[0]);
+    act(() => {
+      fireEvent.change(headings[0], {target: {value: 'one'}});
+      fireEvent.click(buttons[0]);
+    })
     headings = screen.getAllByRole('textbox');
-    fireEvent.change(headings[1], {target: {value: 'two'}});
+    act(() => {
+      fireEvent.change(headings[1], {target: {value: 'two'}});
+    })
     expect(headings[0].value).toBe('one');
     expect(headings[1].value).toBe('two');
   })
@@ -31,20 +37,28 @@ describe('Home page', () => {
   it('UI allows removing of list item', () => {
     render(<Home />);
     let headings = screen.getAllByRole('textbox');
-    fireEvent.change(headings[0], {target: {value: 'one'}});
     let buttons = screen.getAllByRole('button');
-    fireEvent.click(buttons[0]);
+    act(() => {
+      fireEvent.change(headings[0], {target: {value: 'one'}});
+      fireEvent.click(buttons[0]);
+    })
     headings = screen.getAllByRole('textbox');
-    fireEvent.change(headings[1], {target: {value: 'two'}});
-    fireEvent.click(buttons[0]);
+    act(() => {
+      fireEvent.change(headings[1], {target: {value: 'two'}});
+      fireEvent.click(buttons[0]);
+    })
     headings = screen.getAllByRole('textbox');
-    fireEvent.change(headings[2], {target: {value: 'three'}});
+    act(() => {
+      fireEvent.change(headings[2], {target: {value: 'three'}});
+    })
     expect(headings[0].value).toBe('one');
     expect(headings[1].value).toBe('two');
     expect(headings[2].value).toBe('three');
     expect(headings.length).toBe(3);
     buttons = screen.getAllByRole('button');
-    fireEvent.click(buttons[2]);
+    act(() => {
+      fireEvent.click(buttons[2]);
+    })
     headings = screen.getAllByRole('textbox');
     expect(headings.length).toBe(2);
   })
