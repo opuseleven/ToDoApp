@@ -1,9 +1,16 @@
 import styles from '../styles/Components.module.css';
 import { ToDoView } from '../components';
 import { useState, useEffect } from 'react';
+import { ToDo } from '../types';
 
+interface ToDoListProps {
+  todolist: ToDo[],
+  arr: ToDo[],
+  setArr: React.Dispatch<React.SetStateAction<ToDo[]>>,
+  sort: VoidFunction
+}
 
-function ToDoList({ todolist, arr, setArr, sort }) {
+const ToDoList: React.FC<ToDoListProps> = ({ todolist, arr, setArr, sort }) => {
 
   const [displayedList, setDisplayedList] = useState(todolist);
 
