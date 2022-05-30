@@ -1,7 +1,14 @@
 import styles from '../styles/Components.module.css';
 import { removeToDo } from '../services';
+import { ToDo } from '../types';
 
-function DeleteButton({ todo, arr, setArr }) {
+interface DeleteButtonProps {
+  todo: ToDo,
+  arr: ToDo[],
+  setArr: React.Dispatch<React.SetStateAction<ToDo[]>>
+}
+
+const DeleteButton: React.FC<DeleteButtonProps> = ({ todo, arr, setArr }) => {
 
   function handleClick() {
     removeToDo(todo, arr, setArr);
