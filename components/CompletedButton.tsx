@@ -1,8 +1,14 @@
 import { updateCompleted } from '../services';
 import styles from '../styles/Components.module.css';
 import { useState, useEffect } from 'react';
+import { ToDo } from '../types';
 
-function CompletedButton({ todo, sort }) {
+interface CompletedButtonProps {
+  todo: ToDo,
+  sort: VoidFunction
+}
+
+const CompletedButton: React.FC<CompletedButtonProps> = ({ todo, sort }) => {
 
   const [checked, setChecked] = useState(todo.completed);
 
