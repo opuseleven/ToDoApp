@@ -1,34 +1,82 @@
 .newtodobuttoncontainer {
-
+  margin-bottom: 2vh;
+  margin-top: 1vh;
 }
+
 .newtodobutton {
-
+  border-style: solid;
+  border-color: #0b7285;
+  border-radius: 8px;
+  min-width: 4vw;
+  min-height: 3vh;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #98f5ff;
 }
+
+.newtodobutton:hover {
+  cursor: pointer;
+  border-style: solid;
+  border-color: #0b7285;
+  border-radius: 8px;
+  min-width: 4vw;
+  min-height: 3vh;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #00ccff;
+}
+
 .todoviewcontainer {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
+.todolist {
+  padding-bottom: 16px;
+}
+
+.todoviewcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .todoinputcontainer {
   padding: 16px;
 }
+
 .todoinput {
   font-size: 24px;
   border-style: hidden;
 }
+
 .completedbuttoncontainer {
   padding: 16px;
 }
+
 .checkbox {
   width: 24px;
   height: 24px;
 }
+
 .deletebutton {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border-color: #9E1030;
+  background-color: #FF6F61;
 }
-.todolist {
-  padding-bottom: 16px;
+
+.deletebutton:hover {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  border-color: #9E1030;
+  background-color: #FF2B2B;
 }
