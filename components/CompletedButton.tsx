@@ -1,6 +1,6 @@
 import { updateCompleted } from '../services';
 import styles from '../styles/Components.module.css';
-import { useState, useEffect } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { ToDo } from '../types';
 
 interface CompletedButtonProps {
@@ -8,7 +8,7 @@ interface CompletedButtonProps {
   sort: VoidFunction
 }
 
-const CompletedButton: React.FC<CompletedButtonProps> = ({ todo, sort }) => {
+const CompletedButton: FC<CompletedButtonProps> = ({ todo, sort }) => {
 
   const [checked, setChecked] = useState(todo.completed);
 
@@ -19,7 +19,8 @@ const CompletedButton: React.FC<CompletedButtonProps> = ({ todo, sort }) => {
 
   return (
     <div>
-      <input type="checkbox" id="completedbutton" checked={checked} onChange={() => setChecked(!checked)} className={styles.checkbox} />
+      <input type="checkbox" id="completedbutton" checked={checked}
+        onChange={() => setChecked(!checked)} className={styles.checkbox} />
     </div>
   )
 }
