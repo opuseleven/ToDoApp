@@ -1,6 +1,7 @@
 import { ToDo } from '../types';
+import { Dispatch, SetStateAction } from 'react';
 
-function removeToDo(todo: ToDo, arr: ToDo[], setArr: React.Dispatch<React.SetStateAction<ToDo[]>>) {
+function removeToDo(todo: ToDo, arr: ToDo[], setArr: Dispatch<SetStateAction<ToDo[]>>) {
 
   let newArr = [...arr];
 
