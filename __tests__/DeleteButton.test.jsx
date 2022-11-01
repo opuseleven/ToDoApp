@@ -19,7 +19,7 @@ describe('DeleteButton Component', () => {
     expect(button).toHaveTextContent('x');
   })
 
-  it('onClick runs removeToDo service', () => {
+  it('Component functions to run removeToDo service', () => {
     render(<DeleteButton todo={td2} arr={arr} setArr={setArr} />)
     const button = screen.getByRole('button');
     act(() => {
