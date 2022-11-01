@@ -1,4 +1,5 @@
 import { addNewToDo, getToDo } from '../services';
+import { ToDo } from '../types';
 
 describe('addNewToDo function', () => {
 
