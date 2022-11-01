@@ -30,4 +30,11 @@ describe('CompletedButton component', () => {
     })
     expect(testToDo.completed).toBe(true);
   })
+  it('Reverts completed prop', () => {
+    render(<CompletedButton todo={testToDo} sort={sort} />);
+    act(() => {
+      fireEvent.click(screen.getByRole('checkbox'));
+    })
+    expect(testToDo.completed).toBe(false);
+  })
 })
