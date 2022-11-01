@@ -1,13 +1,14 @@
 import { addNewToDo, getToDo } from '../services';
 import styles from '../styles/Components.module.css';
 import { ToDo } from '../types';
+import { FC, Dispatch, SetStateAction } from 'react';
 
 interface AddToDoButtonProps {
   arr: ToDo[],
-  setArr: React.Dispatch<React.SetStateAction<ToDo[]>>
+  setArr: Dispatch<SetStateAction<ToDo[]>>
 }
 
-const AddToDoButton: React.FC<AddToDoButtonProps> = ({ arr, setArr }) => {
+const AddToDoButton: FC<AddToDoButtonProps> = ({ arr, setArr }) => {
 
   function handleClick() {
     const newId = arr.length + 1;
@@ -17,7 +18,9 @@ const AddToDoButton: React.FC<AddToDoButtonProps> = ({ arr, setArr }) => {
 
   return (
     <div className={styles.newtodobuttoncontainer}>
-      <button onClick={handleClick} className={styles.newtodobutton}>+</button>
+      <button onClick={() => handleClick()} className={styles.newtodobutton}>
+        +
+      </button>
     </div>
   )
 }
