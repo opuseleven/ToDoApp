@@ -13,4 +13,9 @@ describe('updateCompleted', () => {
     updateCompleted(testToDo, !testToDo.completed);
     expect(testToDo.completed).toBe(true);
   })
+  
+  it('Reverses the value as well', () => {
+    updateCompleted(testToDo, !testToDo.completed);
+    expect(testToDo.completed).toBe(false);
+  })
 })
