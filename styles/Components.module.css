@@ -39,6 +39,7 @@
 .todoviewcontainer {
   display: flex;
   flex-direction: row;
+  flex-shrink: unset;
   align-items: center;
 }
 
@@ -47,7 +48,7 @@
 }
 
 .todoinput {
-  font-size: 24px;
+  font-size: 1rem;
   border-style: hidden;
 }
 
