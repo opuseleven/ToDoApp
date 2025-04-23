@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@testing-library/dom": "^10.4.0",
     "jest-environment-jsdom": "^29.7.0",
     "node": "^21.7.1",
     "react": "^18.3.1"
